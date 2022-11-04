@@ -69,165 +69,6 @@ h2 {
   margin: auto;
 }
 
-
-/* --- Technical Test 1 - Card Component ---  */
-.section-card {
-  min-height: 100vh;
-  background-color: var( --very-dark-blue);
-  display: flex;
-  flex-direction: column;
-  padding: 2em;
-}
-
-.card-component {
-  display: flex;
-  background-color: var(--dark-desaturated-blue);
-  border-radius: 1rem;
-  overflow: hidden;
-  flex-direction: row-reverse;
-}
-
-.card-image-container {
-  position: relative;
-}
-
-.card-image-container::after {
-  content: " ";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background-color: var(--soft-violet);
-  mix-blend-mode: multiply;
-}
-
-.chevron-container {
-  animation: upDown 1s infinite;
-  position: relative;
-  display: flex;
-  margin: 0 auto  auto auto;
-  flex-direction: column;
-}
-
-.chevron::before {
-  display: block;
-  position: relative;
-	border-style: solid;
-	border-width: 0.25rem 0.25rem 0 0;
-	content: '';
-	height: 0.65rem;
-	width: 0.65rem;
-  transform: rotate(135deg);
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  padding: 5.85rem 7rem 5.85rem 5.85rem;
-  width: 38rem;
-  min-width: 20rem;
-}
-
-.title {
-  margin-bottom: 0.75rem;
-}
-
-.title span {
-  color: var(--soft-violet);
-}
-
-.description {
-  color: var(--slightly-transparent-white);
-  line-height: 1.5rem;
-  margin-bottom: 5rem;
-}
-
-.stats {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  letter-spacing: 0.067rem;
-}
-
-.stats h2 {
-  margin-bottom: 0.3rem;
-}
-
-.stats p {
-  text-transform: uppercase;
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 0.75rem;
-  color: var(--slightly-transparent-white);
-}
-
-/*  --- Technical Test 1 - KeyFrames ---  */ 
-
-@keyframes upDown {
-  0% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
-
-/*  --- Technical Test 1 -  media queries ---  */ 
-
-@media only screen and (max-width: 1024px) {
-  
-  :root {
-    font-size: 12px;
-  }
-  
-  .content {
-    padding: 3rem 4.5rem 3rem 3rem;
-  }
-}
-
-@media only screen and (max-width: 625px) {
-  
-  .card-component {
-    flex-direction: column;
-    min-width: 16.667rem;
-    min-height: 50rem;
-  }
-  
-  .content {
-    width: 100%;
-  }
-  
-  nav, aside, .chevron-container {
-   display: none !important; 
-  }
-  
-  .title, .description, .stats {
-    text-align: center;
-  }
-  
-  .description {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    line-height: 1.75rem;
-  }
-  
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .stats {
-    flex-direction: column;
-  }
-  
-  .stats li {
-    margin-bottom: 2rem;
-  }
-  
-}
-
 /* Technical Test 2 - Jumplinks Component */
 
 aside {
@@ -313,14 +154,13 @@ nav ul li .nav-link {
   color:  var(--white);
 }
 
-.section-one, .section-three, .section-five, .section-seven, 
-.section-after-jumplink-two  {
+section:nth-child(odd)  {
   display: flex;
   background-color: var(--white);
   color: var(--very-dark-blue);
   min-height: 100vh;
 }
-.section-two, .section-four, .section-six, .section-after-jumplink {
+section:nth-child(even){
   display: flex;
   background-color: var(--very-dark-blue);
   min-height: 100vh; 
