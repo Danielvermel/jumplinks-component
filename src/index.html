@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Tests</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  
+  <body>
+    <div>
+      
+      <header>
+        <nav class="nav close">
+          <ul>
+            <li><a href="#section-one" class="nav-link" tabindex="-1">Section One</a></li>
+            <li><a href="#section-two" class="nav-link" tabindex="-1">Section Two</a></li>
+            <li><a href="#section-three" class="nav-link" tabindex="-1">Section Three</a></li>
+            <li><a href="#section-four" class="nav-link" tabindex="-1">Section Four</a></li>
+            <li><a href="#section-five" class="nav-link" tabindex="-1">Section Five</a></li>
+            <li><a href="#section-six" class="nav-link" tabindex="-1">Section Six</a></li>
+            <li><a href="#section-seven" class="nav-link" tabindex="-1">Section Seven</a></li>
+          </ul> 
+        </nav> 
+      </header>
+      
+      <main> 
+        <article>
+          <aside class="bottom-aside">        
+            <div class="aside-container">
+              <span class="selected-section">Card Component</span>
+              <button class="show-button hidden" tabindex="-1">Show</button>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>  
+          </aside> 
+          
+          <section class="section-card" tabindex="1">
+            <div class="card-component m-auto">
+              <div class="card-image-container">
+                <img srcset="./assets/image-header-mobile.jpg 654w, ./assets/image-header-desktop.jpg 540w"
+                    sizes="(max-width: 625px) 654px, 540px"
+                    src="./assets/image-header-desktop.jpg" alt="people in the office"
+                />
+              </div>
+              
+              <div class="content">
+                <h1 class="title">Get <span>insights</span> that help your business grow.</h1>
+                <p class="description">
+                  Discover the benefits of data analytics and make better decisions regarding revenue,
+                  customer experience, and overall efficiency.
+                </p>
+                <ul class="stats">
+                  <li>
+                    <h2>10k+</h2>
+                    <p>companies</p>
+                  </li>
+                  <li>
+                    <h2>314</h2>
+                    <p>templates</p>
+                  </li>
+                  <li>
+                    <h2>12M+</h2>
+                    <p>queries</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="chevron-container">
+              <strong class="chevron"></strong>
+              <strong class="chevron"></strong>
+            </div>
+          </section>
+            
+          <section class="section-one" id="section-one" tabindex="2">
+            <h1 class="m-auto">Section One</h1>
+          </section>
+          <section class="section-two" id="section-two" tabindex="3">
+            <h1 class="m-auto">Section Two</h1>
+          </section>
+          <section class="section-three" id="section-three" tabindex="4">
+            <h1 class="m-auto">Section Three</h1>
+          </section>
+          <section class="section-four" id="section-four" tabindex="5">
+            <h1 class="m-auto">Section Four</h1>
+          </section>
+          <section class="section-five" id="section-five" tabindex="6">
+            <h1 class="m-auto">Section Five</h1>
+          </section>
+          <section class="section-six" id="section-six" tabindex="7">
+            <h1 class="m-auto">Section Six</h1>
+          </section>
+          <section class="section-seven" id="section-seven" tabindex="8">
+            <h1 class="m-auto">Section Seven</h1>
+          </section>
+        </article>
+        
+        <section class="section-after-jumplink m-auto" tabindex="9">
+          <h1 class="m-auto">Section After Jumplink</h1>
+        </section>
+        <section class="section-after-jumplink-two" tabindex="10">
+          <div class="image-after-jumplink m-auto">
+            <img loading="lazy" src="./assets/come-on-in.jpg" alt="come on in"/>
+          </div>
+        </section>
+    
+      </main>
+    </div>  
+    
+    <script src="./js/main.js"></script>
+  </body>
+</html> 

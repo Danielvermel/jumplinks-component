@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+
+:root {
+  
+  /* Colors */
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: rgb(183, 75, 255);
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --slightly-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+
+  /* Fonts */
+  font-size: 15px;
+  
+  --inter: 'Inter', sans-serif;
+  --lexend-deca: 'Lexend Deca', sans-serif;
+  
+  /* Scroll Behavior */
+  scroll-behavior: smooth;
+}
+
+/*  defaults  */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+/* Utility Classes */
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+
+/* --- Technical Test 1 - Card Component ---  */
+.section-card {
+  min-height: 100vh;
+  background-color: var( --very-dark-blue);
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.card-component {
+  display: flex;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 1rem;
+  overflow: hidden;
+  flex-direction: row-reverse;
+}
+
+.card-image-container {
+  position: relative;
+}
+
+.card-image-container::after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: var(--soft-violet);
+  mix-blend-mode: multiply;
+}
+
+.chevron-container {
+  animation: upDown 1s infinite;
+  position: relative;
+  display: flex;
+  margin: 0 auto  auto auto;
+  flex-direction: column;
+}
+
+.chevron::before {
+  display: block;
+  position: relative;
+	border-style: solid;
+	border-width: 0.25rem 0.25rem 0 0;
+	content: '';
+	height: 0.65rem;
+	width: 0.65rem;
+  transform: rotate(135deg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 5.85rem 7rem 5.85rem 5.85rem;
+  width: 38rem;
+  min-width: 20rem;
+}
+
+.title {
+  margin-bottom: 0.75rem;
+}
+
+.title span {
+  color: var(--soft-violet);
+}
+
+.description {
+  color: var(--slightly-transparent-white);
+  line-height: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.stats {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  letter-spacing: 0.067rem;
+}
+
+.stats h2 {
+  margin-bottom: 0.3rem;
+}
+
+.stats p {
+  text-transform: uppercase;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.75rem;
+  color: var(--slightly-transparent-white);
+}
+
+/*  --- Technical Test 1 - KeyFrames ---  */ 
+
+@keyframes upDown {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/*  --- Technical Test 1 -  media queries ---  */ 
+
+@media only screen and (max-width: 1024px) {
+  
+  :root {
+    font-size: 12px;
+  }
+  
+  .content {
+    padding: 3rem 4.5rem 3rem 3rem;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  
+  .card-component {
+    flex-direction: column;
+    min-width: 16.667rem;
+    min-height: 50rem;
+  }
+  
+  .content {
+    width: 100%;
+  }
+  
+  nav, aside, .chevron-container {
+   display: none !important; 
+  }
+  
+  .title, .description, .stats {
+    text-align: center;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+  
+  .stats li {
+    margin-bottom: 2rem;
+  }
+  
+}
+
+/* Technical Test 2 - Jumplinks Component */
+
+aside {
+  width: 100%;
+  background-color: var(--very-dark-blue);
+  z-index: 2;
+}
+
+.top-aside {
+  position: sticky;
+  display: inline-block;
+  top: 0;
+}
+
+.bottom-aside {
+  position: absolute;
+  bottom: 0;
+}
+
+.aside-container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  margin: 0 1.333rem;
+  padding: 1.333rem;
+}
+
+.show-button {
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.show-button:hover {
+  cursor: pointer;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 0.533rem;
+  background-color: var(--white);
+  display: flex;
+}
+
+.progress-bar {
+  height: 0.533rem;
+  background-color: var(--soft-violet);
+  width: 0%;
+}
+
+nav {
+  position: fixed;
+  background-color: var(--very-dark-blue);
+  width: 100%;
+  z-index: 1;
+}
+
+.close {
+  top: -14.667rem;
+  transition: top 0.7s ease;
+}
+
+.open {
+  top: 4.2rem;
+  transition: top 0.7s ease;
+}
+
+nav ul {
+  margin: 1.333rem;  
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1.333rem 1.333rem;
+  width: 33%;
+}
+
+nav ul li .nav-link {
+  text-decoration: none;
+  color:  var(--white);
+}
+
+.section-one, .section-three, .section-five, .section-seven, 
+.section-after-jumplink-two  {
+  display: flex;
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+  min-height: 100vh;
+}
+.section-two, .section-four, .section-six, .section-after-jumplink {
+  display: flex;
+  background-color: var(--very-dark-blue);
+  min-height: 100vh; 
+}
+
+.image-after-jumplink {
+  position: relative;
+}
