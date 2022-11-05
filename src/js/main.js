@@ -1,16 +1,16 @@
 // Hide/Show Navigation Menu
 const showButton = document.querySelector('.show-button');
 const navLinks = document.querySelectorAll('.nav-link');
-const nav = document.querySelector('nav');
+const linksList= document.querySelector('ul');
 
 showButton.addEventListener('click', () => {
-  if (nav.classList.contains('close')) {
-    nav.classList.remove('close');
-    nav.classList.add('open');
+  if (linksList.classList.contains('close')) {
+    linksList.classList.remove('close');
+    linksList.classList.add('open');
     showButton.innerHTML = 'Hide';
   } else {
-    nav.classList.remove('open');
-    nav.classList.add('close');
+    linksList.classList.remove('open');
+    linksList.classList.add('close');
     showButton.innerHTML = 'Show';
   }
 });
@@ -34,6 +34,7 @@ window.onscroll = function () {
 
 
 // Intersections
+const nav = document.querySelector('nav');
 const allSections = document.querySelectorAll('section');
 const selectedSection = document.querySelector('.selected-section');
 const specialSections = ['section-before-jumplink', 'section-after-jumplink', 'section-after-jumplink-two']

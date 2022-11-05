@@ -4,13 +4,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technical Tests</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Technical Test 2</title>
+    <link rel="stylesheet" href="scss//main.scss" />
   </head>
   
   <body>
-    <div>
 
       <main> 
         <section class="section-before-jumplink" tabindex="1">
@@ -18,23 +16,26 @@
         </section>
         
         <nav class="nav">
-          <div class="aside-container">
-            <span class="selected-section">Section One</span>
-            <button class="show-button hidden" tabindex="-1">Show</button>
-          </div>
-          <div class="progress-bar-container">
-            <div class="progress-bar" id="progressBar"></div>
-          </div>  
-          <ul class="close">
-            <li><a href="#section-one" class="nav-link" tabindex="-1">Section One</a></li>
-            <li><a href="#section-two" class="nav-link" tabindex="-1">Section Two</a></li>
-            <li><a href="#section-three" class="nav-link" tabindex="-1">Section Three</a></li>
-            <li><a href="#section-four" class="nav-link" tabindex="-1">Section Four</a></li>
-            <li><a href="#section-five" class="nav-link" tabindex="-1">Section Five</a></li>
-            <li><a href="#section-six" class="nav-link" tabindex="-1">Section Six</a></li>
-            <li><a href="#section-seven" class="nav-link" tabindex="-1">Section Seven</a></li>
-          </ul> 
+          <div class="nav-container">
+            <div class="aside-container">
+              <span class="selected-section">Section One</span>
+              <button class="show-button hidden" tabindex="-1">Show</button>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+          </div> 
         </nav> 
+        
+        <ul class="close">
+          <li><a href="#section-one" class="nav-link" tabindex="-1">Section One</a></li>
+          <li><a href="#section-two" class="nav-link" tabindex="-1">Section Two</a></li>
+          <li><a href="#section-three" class="nav-link" tabindex="-1">Section Three</a></li>
+          <li><a href="#section-four" class="nav-link" tabindex="-1">Section Four</a></li>
+          <li><a href="#section-five" class="nav-link" tabindex="-1">Section Five</a></li>
+          <li><a href="#section-six" class="nav-link" tabindex="-1">Section Six</a></li>
+          <li><a href="#section-seven" class="nav-link" tabindex="-1">Section Seven</a></li>
+        </ul>
         
         <article>
           <section class="section-one" id="section-one" tabindex="2">
@@ -60,8 +61,7 @@
           </section>
         </article>
       </main>
-      
-    </div>  
+       
     
     <footer>
       <section class="section-after-jumplink m-auto" tabindex="9">
