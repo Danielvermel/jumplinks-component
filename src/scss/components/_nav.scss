@@ -1,0 +1,38 @@
+.nav {
+  background-color: $primary;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  .nav-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+}
+
+.nav-list {
+  background-color: $primary;
+  width: 100%;
+  position: fixed;
+  
+  &.close {
+    top: -14.667rem;
+    transition: top 1s ease;
+  }
+  
+  &.open {
+    top: 3.7rem;
+    transition: top 1s ease;
+  }
+  
+  .nav-item {
+    display: inline-block;
+    width: 33%;
+    
+    .nav-link {
+      color: $white;
+    }
+  }
+}

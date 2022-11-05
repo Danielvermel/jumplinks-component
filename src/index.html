@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Technical Test 2</title>
-    <link rel="stylesheet" href="scss//main.scss" />
+    <link rel="stylesheet" href="scss/main.scss" />
   </head>
   
   <body>
@@ -16,25 +16,23 @@
         </section>
         
         <nav class="nav">
-          <div class="nav-container">
-            <div class="aside-container">
+            <div class="nav-container p-3 mx-3">
               <span class="selected-section">Section One</span>
               <button class="show-button hidden" tabindex="-1">Show</button>
             </div>
             <div class="progress-bar-container">
               <div class="progress-bar" id="progressBar"></div>
-            </div>
-          </div> 
+            </div> 
         </nav> 
         
-        <ul class="close">
-          <li><a href="#section-one" class="nav-link" tabindex="-1">Section One</a></li>
-          <li><a href="#section-two" class="nav-link" tabindex="-1">Section Two</a></li>
-          <li><a href="#section-three" class="nav-link" tabindex="-1">Section Three</a></li>
-          <li><a href="#section-four" class="nav-link" tabindex="-1">Section Four</a></li>
-          <li><a href="#section-five" class="nav-link" tabindex="-1">Section Five</a></li>
-          <li><a href="#section-six" class="nav-link" tabindex="-1">Section Six</a></li>
-          <li><a href="#section-seven" class="nav-link" tabindex="-1">Section Seven</a></li>
+        <ul class="nav-list close p-3">
+          <li class="nav-item p-3"><a href="#section-one" class="nav-link" tabindex="-1">Section One</a></li>
+          <li class="nav-item p-3"><a href="#section-two" class="nav-link" tabindex="-1">Section Two</a></li>
+          <li class="nav-item p-3"><a href="#section-three" class="nav-link" tabindex="-1">Section Three</a></li>
+          <li class="nav-item p-3"><a href="#section-four" class="nav-link" tabindex="-1">Section Four</a></li>
+          <li class="nav-item p-3 "><a href="#section-five" class="nav-link" tabindex="-1">Section Five</a></li>
+          <li class="nav-item p-3"><a href="#section-six" class="nav-link" tabindex="-1">Section Six</a></li>
+          <li class="nav-item p-3"><a href="#section-seven" class="nav-link" tabindex="-1">Section Seven</a></li>
         </ul>
         
         <article>
@@ -62,17 +60,16 @@
         </article>
       </main>
        
+    <footer>
+      <section class="section-after-jumplink m-auto" tabindex="9">
+        <h1 class="m-auto">Section After Jumplink</h1>
+      </section>
+      
+      <section class="section-after-jumplink-two m-auto" tabindex="9">
+        <h1 class="m-auto">Section After Jumplink</h1>
+      </section>
+    </footer>
     
-    <footer>
-      <section class="section-after-jumplink m-auto" tabindex="9">
-        <h1 class="m-auto">Section After Jumplink</h1>
-      </section>
-    </footer>
-    <footer>
-      <section class="section-after-jumplink m-auto" tabindex="9">
-        <h1 class="m-auto">Section After Jumplink</h1>
-      </section>
-    </footer>
     <script src="./js/main.js"></script>
   </body>
 </html> 

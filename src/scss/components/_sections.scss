@@ -1,0 +1,9 @@
+.section-before-jumplink, .section-two, .section-four,
+.section-six, .section-after-jumplink {
+  background-color: $primary;
+}
+.section-one, .section-three, .section-five, 
+.section-seven, .section-after-jumplink-two {
+  background-color: $white;
+  color: $primary;
+}

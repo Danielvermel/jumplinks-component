@@ -1,0 +1,51 @@
+
+$spacemounts:(0.25,0.5,1,1.5,3);
+
+@each $space in $spacemounts {
+
+    $i: index($spacemounts, $space);
+    
+    .p-#{$i}{
+        padding: #{$space}rem;
+    }
+
+    .py-#{$i}{
+        padding-top: #{$space}rem;
+        padding-bottom: #{$space}rem;
+    }
+
+    .px-#{$i}{
+        padding-left: #{$space}rem;
+        padding-right: #{$space}rem;
+    }
+
+    .pt-#{$i}{
+        padding-top: #{$space}rem;
+    }
+
+    .pb-#{$i}{
+        padding-bottom:#{$space}rem;
+    }
+
+    .pl-#{$i}{
+        padding-left: #{$space}rem;
+    }
+
+    .pr-#{$i}{
+        padding-right:#{$space}rem;
+    }
+}
+
+.px-auto {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.py-auto {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.p-auto {
+  padding: auto;
+}

@@ -1,0 +1,51 @@
+
+$spacemounts:(0.25,0.5,1,1.5,3);
+
+@each $space in $spacemounts {
+
+    $i: index($spacemounts, $space);
+    
+    .m-#{$i}{
+        margin: #{$space}rem;
+    }
+    
+    .my-#{$i}{
+        margin-top: #{$space}rem;
+        margin-bottom: #{$space}rem;
+    }
+
+    .mx-#{$i}{
+        margin-left: #{$space}rem;
+        margin-right: #{$space}rem;
+    }
+
+    .mt-#{$i}{
+        margin-top: #{$space}rem;
+    }
+
+    .mb-#{$i}{
+        margin-bottom:#{$space}rem ;
+    }
+
+    .ml-#{$i}{
+        margin-left:#{$space}rem;
+    }
+
+    .mr-#{$i}{
+        margin-right:#{$space}rem;
+    }
+}
+
+.mx-auto {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.my-auto {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.m-auto {
+  margin: auto;
+}
