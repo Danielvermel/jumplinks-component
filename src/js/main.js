@@ -1,24 +1,25 @@
 // Hide/Show Navigation Menu
 const showButton = document.querySelector('.show-button');
 const navLinks = document.querySelectorAll('.nav-link');
-const linksList= document.querySelector('ul');
+const linksList= document.querySelector('.nav-list');
 
+const hideShowElement = (elementName, removeClass = '', addClass = '') => {
+  if(Boolean(removeClass)) elementName.classList.remove(removeClass);
+  if(Boolean(addClass)) elementName.classList.add(addClass);
+}
 showButton.addEventListener('click', () => {
   if (linksList.classList.contains('close')) {
-    linksList.classList.remove('close');
-    linksList.classList.add('open');
+    hideShowElement(linksList,'close','open')
     showButton.innerHTML = 'Hide';
   } else {
-    linksList.classList.remove('open');
-    linksList.classList.add('close');
+    hideShowElement(linksList,'open','close')
     showButton.innerHTML = 'Show';
   }
 });
 
 navLinks.forEach((anchor) => {
   anchor.addEventListener('click', () => {
-    nav.classList.remove('open');
-    nav.classList.add('close');
+    hideShowElement(linksList,'open','close')
     showButton.innerHTML = 'Show';
   });
 })
@@ -34,7 +35,6 @@ window.onscroll = function () {
 
 
 // Intersections
-const nav = document.querySelector('nav');
 const allSections = document.querySelectorAll('section');
 const selectedSection = document.querySelector('.selected-section');
 const specialSections = ['section-before-jumplink', 'section-after-jumplink', 'section-after-jumplink-two']
@@ -46,14 +46,11 @@ const jumpLinkSectionsObserver = new IntersectionObserver((entries) => {
     
     if(!specialSections.includes(entry.target.className)) {
       selectedSection.innerHTML = entry.target.innerText
-      showButton.classList.remove('hidden');
-      showButton.classList.add('block');    
-    } else if(entry.target.className === 'section-after-jumplink') {
-      nav.classList.remove('open');
-      nav.classList.add('close');
+      hideShowElement(showButton,'hidden','block')
+    } else {
+      hideShowElement(linksList,'open','close')
+      hideShowElement(showButton,'block','hidden')
       showButton.innerHTML = 'Show';
-    } else if (entry.target.className === 'section-before-jumplink') {
-      showButton.classList.add('hidden');
     }
   });
 }, {
