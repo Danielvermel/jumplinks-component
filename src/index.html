@@ -11,10 +11,21 @@
   
   <body>
     <div>
-      
-      <header>
-        <nav class="nav close">
-          <ul>
+
+      <main> 
+        <section class="section-before-jumplink" tabindex="1">
+            <h1 class="m-auto">Section Before Jumplink</h1>
+        </section>
+        
+        <nav class="nav">
+          <div class="aside-container">
+            <span class="selected-section">Section One</span>
+            <button class="show-button hidden" tabindex="-1">Show</button>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>  
+          <ul class="close">
             <li><a href="#section-one" class="nav-link" tabindex="-1">Section One</a></li>
             <li><a href="#section-two" class="nav-link" tabindex="-1">Section Two</a></li>
             <li><a href="#section-three" class="nav-link" tabindex="-1">Section Three</a></li>
@@ -24,24 +35,8 @@
             <li><a href="#section-seven" class="nav-link" tabindex="-1">Section Seven</a></li>
           </ul> 
         </nav> 
-      </header>
-      
-      <main> 
+        
         <article>
-          <aside class="bottom-aside">        
-            <div class="aside-container">
-              <span class="selected-section">Card Component</span>
-              <button class="show-button hidden" tabindex="-1">Show</button>
-            </div>
-            <div class="progress-bar-container">
-              <div class="progress-bar" id="progressBar"></div>
-            </div>  
-          </aside> 
-          
-          <section class="section-before-jumplink" tabindex="1">
-              <h1 class="m-auto">Section Before Jumplink</h1>
-          </section>
-            
           <section class="section-one" id="section-one" tabindex="2">
             <h1 class="m-auto">Section One</h1>
           </section>
@@ -64,19 +59,20 @@
             <h1 class="m-auto">Section Seven</h1>
           </section>
         </article>
-        
-        <section class="section-after-jumplink m-auto" tabindex="9">
-          <h1 class="m-auto">Section After Jumplink</h1>
-        </section>
-        <section class="section-after-jumplink-two" tabindex="10">
-          <div class="image-after-jumplink m-auto">
-            <img loading="lazy" src="./assets/come-on-in.jpg" alt="come on in"/>
-          </div>
-        </section>
-    
       </main>
+      
     </div>  
     
+    <footer>
+      <section class="section-after-jumplink m-auto" tabindex="9">
+        <h1 class="m-auto">Section After Jumplink</h1>
+      </section>
+    </footer>
+    <footer>
+      <section class="section-after-jumplink m-auto" tabindex="9">
+        <h1 class="m-auto">Section After Jumplink</h1>
+      </section>
+    </footer>
     <script src="./js/main.js"></script>
   </body>
 </html> 

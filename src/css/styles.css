@@ -72,9 +72,7 @@ h2 {
 /* Technical Test 2 - Jumplinks Component */
 
 aside {
-  width: 100%;
-  background-color: var(--very-dark-blue);
-  z-index: 2;
+
 }
 
 .top-aside {
@@ -84,8 +82,7 @@ aside {
 }
 
 .bottom-aside {
-  position: absolute;
-  bottom: 0;
+
 }
 
 .aside-container {
@@ -122,15 +119,17 @@ aside {
 }
 
 nav {
-  position: fixed;
   background-color: var(--very-dark-blue);
   width: 100%;
   z-index: 1;
+  position: sticky;
+  top: 0;
 }
 
 .close {
   top: -14.667rem;
   transition: top 0.7s ease;
+  position: fixed;
 }
 
 .open {
@@ -154,13 +153,13 @@ nav ul li .nav-link {
   color:  var(--white);
 }
 
-section:nth-child(odd)  {
+section:nth-child(even) {
   display: flex;
   background-color: var(--white);
   color: var(--very-dark-blue);
   min-height: 100vh;
 }
-section:nth-child(even){
+section:nth-child(odd), footer{
   display: flex;
   background-color: var(--very-dark-blue);
   min-height: 100vh; 

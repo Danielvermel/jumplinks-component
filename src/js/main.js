@@ -25,63 +25,42 @@ navLinks.forEach((anchor) => {
 
 
 // Smooth Progress Bar
+const sectionJumplink = document.querySelector('.section-after-jumplink');
+
 window.onscroll = function () {
   let scrolled = (window.pageYOffset / sectionJumplink.offsetTop) * 100;
   document.getElementById('progressBar').style.width = scrolled + '%';
 }
 
+
 // Intersections
 const allSections = document.querySelectorAll('section');
-const cardSection = document.querySelector('.section-card');
 const selectedSection = document.querySelector('.selected-section');
-const sectionJumplink = document.querySelector('.section-after-jumplink');
-const specialSections = ['section-card', 'section-after-jumplink', 'section-after-jumplink-two']
-
-const aside = document.querySelector('aside');
-
-const configJumpLinkSection = {
-  rootMargin: `${document.querySelector('aside').offsetHeight}px`,
-  threshold: 1
-};
+const specialSections = ['section-before-jumplink', 'section-after-jumplink', 'section-after-jumplink-two']
 
 const jumpLinkSectionsObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
+        
     if(!entry.isIntersecting) return 
+    
     if(!specialSections.includes(entry.target.className)) {
       selectedSection.innerHTML = entry.target.innerText
-      aside.classList.remove('bottom-aside');
-      aside.classList.add('top-aside');
       showButton.classList.remove('hidden');
-      showButton.classList.add('block');     
+      showButton.classList.add('block');    
     } else if(entry.target.className === 'section-after-jumplink') {
       nav.classList.remove('open');
       nav.classList.add('close');
       showButton.innerHTML = 'Show';
+    } else if (entry.target.className === 'section-before-jumplink') {
+      showButton.classList.add('hidden');
     }
   });
-}, configJumpLinkSection);
-
-const configCardSection = {
-  rootMargin: `${-document.querySelector('aside').offsetHeight}px`,
-  threshold: 0
-};
-
-const cardSectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if(!entry.isIntersecting) return
-      aside.classList.remove('top-aside');
-      aside.classList.add('bottom-aside');
-      showButton.classList.remove('block');
-      showButton.classList.add('hidden');
-      nav.classList.remove('open');
-      nav.classList.add('close');
-      selectedSection.innerHTML = 'Card Component';
-      showButton.innerHTML = 'Show';
-  })
-}, configCardSection);
+}, {
+  rootMargin: `${document.querySelector('nav').offsetHeight}px`,
+  threshold: 1
+});
 
 allSections.forEach((section) => {
   jumpLinkSectionsObserver.observe(section);
 });
 
-cardSectionObserver.observe(cardSection)
