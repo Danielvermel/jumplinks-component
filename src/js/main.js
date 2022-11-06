@@ -1,12 +1,10 @@
-// Hide/Show Navigation Menu
+import { hideShowElement } from "./functions/common";
+
+// Navigation Listeners
 const showButton = document.querySelector('.show-button');
 const navLinks = document.querySelectorAll('.nav-link');
 const linksList= document.querySelector('.nav-list');
 
-const hideShowElement = (elementName, removeClass = '', addClass = '') => {
-  if(Boolean(removeClass)) elementName.classList.remove(removeClass);
-  if(Boolean(addClass)) elementName.classList.add(addClass);
-}
 showButton.addEventListener('click', () => {
   if (linksList.classList.contains('close')) {
     hideShowElement(linksList,'close','open')
@@ -45,12 +43,12 @@ const jumpLinkSectionsObserver = new IntersectionObserver((entries) => {
     if(!entry.isIntersecting) return 
     
     if(!specialSections.includes(entry.target.className)) {
-      selectedSection.innerHTML = entry.target.innerText
       hideShowElement(showButton,'hidden','block')
+      selectedSection.innerHTML = entry.target.innerText
     } else {
       hideShowElement(linksList,'open','close')
       hideShowElement(showButton,'block','hidden')
-      showButton.innerHTML = 'Show';
+      showButton.innerHTML = 'Show'
     }
   });
 }, {
@@ -61,4 +59,3 @@ const jumpLinkSectionsObserver = new IntersectionObserver((entries) => {
 allSections.forEach((section) => {
   jumpLinkSectionsObserver.observe(section);
 });
-
